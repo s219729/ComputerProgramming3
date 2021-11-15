@@ -19,6 +19,15 @@ public class Main {
         System.out.println("Has a warranty: " + smartphone.checkWarranty());
         smartphone.calling();
 
+        Account weronikaAccount = new Account();
+        weronikaAccount.number = "123452323";
+        weronikaAccount.customerName = "Weronika Pankalla";
+        weronikaAccount.balance = 2500.0;
+
+        weronikaAccount.displayAccountInfo();
+        weronikaAccount.makeDeposit(500.0);
+        weronikaAccount.withdrawFunds(100.5);
+
         }
 
     }
