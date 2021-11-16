@@ -9,6 +9,8 @@
 
 package pl.pankalla.weronika;
 
+import org.w3c.dom.css.Counter;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -56,5 +58,45 @@ public class Main {
         lamp2.onOrOff();
 
 
+        //Creating two rectangle objects
+        Rectangle rectangle = new Rectangle();
+        rectangle.width = 4.0;
+        rectangle.length = 2.5;
+
+        Rectangle rectangle2 = new Rectangle();
+        rectangle2.width = 3.0;
+        rectangle2.length = 3.0;
+
+        rectangle.displayDimensions();
+        rectangle.displaySurface();
+        rectangle.displayPerimeter();
+
+        rectangle2.displayDimensions();
+        rectangle2.displaySurface();
+        rectangle2.displayPerimeter();
+
+
+        // Creating first counter
+        Counters counter = new Counters();
+        counter.increaseByTen();
+        counter.increaseByTen();
+        for(int i=0; i<3; i++) {
+            counter.increaseByOne();
+        }
+        counter.displayValue();
+        counter.resetToInitialValue();
+        counter.displayValue();
+
+        // Creating second counter
+        Counters counter2 = new Counters();
+        for(int i=0; i<5; i++) {
+            counter2.decreaseByTen();
+        }
+        for(int i=0; i<3; i++){
+            counter2.increaseByOne();
+        }
+        counter2.displayValue();
+        counter2.resetToInitialValue();
+        counter2.displayValue();
     }
 }
