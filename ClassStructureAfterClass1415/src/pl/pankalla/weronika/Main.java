@@ -16,6 +16,8 @@ package pl.pankalla.weronika;
 public class Main {
 
     public static void main(String[] args) {
+
+        // Zad 16.
         TemperatureCalculator calculator = new TemperatureCalculator();
         calculator.temperatureInCelsius = 25.0;
 
@@ -37,6 +39,13 @@ public class Main {
                 calculator.kelvinToCelsius() + " Celsius degrees");
         System.out.println(calculator.temperatureInKelvin + " Kelvin degrees is equal to " +
                 calculator.kelvinToFahrenheit() + " Fahrenheit degrees");
+
+
+        // Zad 15.
+        Statistics calculation = new Statistics(5, 10);
+        System.out.println("Number of items in given range is: " + calculation.numberOfItems());
+        System.out.println("Sum of items in given range is: " + calculation.calculateSum());
+        System.out.println("Aritmetic mean of items in given range is: " + calculation.aritmeticMean());
 
     }
 }
