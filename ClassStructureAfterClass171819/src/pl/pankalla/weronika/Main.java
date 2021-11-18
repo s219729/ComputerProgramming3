@@ -37,6 +37,17 @@ package pl.pankalla.weronika;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+//        StudentGrades firstStudent = new StudentGrades("Amanda", new double[]{3.5, 4.5, 4.0, 2.0, 5.0, 3.5, 3.5});
+//        firstStudent.displayInfo();
+//        StudentGrades secondStudent = new StudentGrades("James", new double[]{2.0, 3.0, 2.0, 4.5, 4.5});
+//        secondStudent.displayInfo();
+//
+//        StudentGrades thirdStudent = new StudentGrades("Weronika", 10);
+//        thirdStudent.displayInfo();
+
+        StudentGrades fourthStudent = new StudentGrades("Puper");
+        fourthStudent.displayInfo();
+
+
     }
 }

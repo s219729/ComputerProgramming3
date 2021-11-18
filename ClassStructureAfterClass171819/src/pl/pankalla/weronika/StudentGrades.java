@@ -34,6 +34,10 @@
 package pl.pankalla.weronika;
 
 
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
+
 public class StudentGrades {
 
     String studentName;
@@ -44,23 +48,66 @@ public class StudentGrades {
         this.grades = grades;
     }
 
+    StudentGrades(String name, int numberOfGrades){
+        this.studentName = name;
+        double[] randomGrades = new double[numberOfGrades];
+        Random random = new Random();
+        for(int i=0; i<numberOfGrades; i++){
+            randomGrades[i] = random.nextInt(5 - 1) + 1;
+        }
+        this.grades = randomGrades;
+    }
+
+    StudentGrades(String name){
+        this.studentName = name;
+        System.out.println("Please enter grades, delimited by comma, eg. 4,5,2");
+        System.out.println("\n");
+        Scanner newScanner = new Scanner(System.in);
+        String input = newScanner.next();
+        String[] stringGrades= input.split(",");
+        this.grades = Arrays.stream(stringGrades)
+                .mapToDouble(Double::parseDouble)
+                .toArray();
+//        System.out.println(input);
+    }
+
     // calculates of the lowest grade
-
-
+    public double lowestGrade(){
+        return Arrays.stream(this.grades).min().getAsDouble();
+    }
 
     // calculates of the highest grade
+    public double highestGrade(){
+        return Arrays.stream(this.grades).max().getAsDouble();
 
-
+    }
 
     // calculates of the number of grades
+    public int numberOfGrades(){
+        return this.grades.length;
 
-
+    }
 
     // calculates of the grade point average
+    public double gradePointAverage(){
+        double sum = 0.0;
+        int count = this.numberOfGrades();
+        for (int i=0; i<count; i++){
+            sum += this.grades[i];
+        }
+        return sum/count;
+    }
 
 
     // displays student’s record with student’s name, a list of the student's grades,
     // number of grades, lowest grade, highest grade, and grade point average
 
-
+    public void displayInfo(){
+        System.out.println("Student's name: " + studentName);
+        System.out.println("Student's grades: " + Arrays.toString(grades));
+        System.out.println("Number of grades: " + numberOfGrades());
+        System.out.println("Lowest grade: " + lowestGrade());
+        System.out.println("Highest grade: " + highestGrade());
+        System.out.println("Grade point average: " + gradePointAverage());
+    }
 }
