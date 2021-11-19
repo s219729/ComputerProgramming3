@@ -39,6 +39,12 @@ package pl.pankalla.weronika;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        Clock testClock = new Clock(12, 47);
+        Clock secondClock = new Clock();
+
+
+
+
+
     }
 }
