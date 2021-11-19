@@ -25,6 +25,28 @@ package pl.pankalla.weronika;
 
 public class Room {
 
+    int roomNumber;
+    int beds;
+    boolean occupied = false;
+    String guestName;
 
+    public Room(int roomNumber) {
+        this.roomNumber = roomNumber;
+        this.beds = 2;
+    }
 
+    public Room(int roomNumber, int beds)  {
+        this.roomNumber = roomNumber;
+        this.beds = beds;
+    }
+
+    public void checkin(String guestName) {
+        this.guestName = guestName;
+        this.occupied = true;
+    }
+
+    public void checkout() {
+        this.guestName = null;
+        this.occupied = false;
+    }
 }

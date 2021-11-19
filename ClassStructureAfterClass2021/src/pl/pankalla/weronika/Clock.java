@@ -32,35 +32,37 @@
 // Add methods: setAlarm(hour, minute) and runAlarm(), which displays the "beep-beep-beep-beep !!" alarm sound.
 // Turn on the alarm when the alarm time is the same as the clock time(compare times in the addOneMinute() method).
 
-
 package pl.pankalla.weronika;
 
 public class Clock {
     int hour;
     int minute;
-    int alarmHour;
-    int alarmMinute;
+    // set to -1 to avoid running alarm on 00:00
+    int alarmHour = -1;
+    int alarmMinute = -1;
 
 
     Clock(){
         this.hour = 0;
         this.minute = 0;
-        String stringHour = Integer.toString(hour);
-        String stringMinute = Integer.toString(minute);
-        System.out.println(stringHour + stringHour + ":" + stringMinute + stringMinute);
-
+        displayTime();
     }
 
     Clock(int hour, int minute){
         if(hour>=24 || hour<0) {
-            System.out.println("Hour should be in the range of [0-23].");
-        } else if(minute>=59 || minute<0) {
-            System.out.println("Minute should be in the range of [0-59].");
-        } else {
-            String stringHour = Integer.toString(hour);
-            String stringMinute = Integer.toString(minute);
-            System.out.println(stringHour + ":" + stringMinute);
+            System.out.println("Hour should be in the range of [0-23]. Setting hour to 0");
+            this.hour=0;
         }
+        else {
+            this.hour = hour;
+        }
+        if(minute>=59 || minute<0) {
+            System.out.println("Minute should be in the range of [0-59]. Setting minute to 0");
+            this.minute = 0;
+        } else {
+            this.minute = minute;
+        }
+        displayTime();
     }
 
     // setClock(hour,minute)
@@ -71,30 +73,15 @@ public class Clock {
     }
 
 
-   // setClock() - reset clock to 00:00
+    // setClock() - reset clock to 00:00
 
     public void setClock(){
-        this.hour = 0;
-        this.minute = 0;
-        String stringHour = Integer.toString(hour);
-        String stringMinute = Integer.toString(minute);
-        System.out.println(stringHour + stringHour + ":" + stringMinute + stringMinute);
-
+        setClock(0,0);
     }
 
     // displayTime()
     public void displayTime(){
-        String stringHour = Integer.toString(hour);
-        String stringMinute = Integer.toString(minute);
-        if(hour < 10 && minute < 10) {
-            System.out.println(stringHour + stringHour + ":" + stringMinute + stringMinute);
-        } else if(hour > 9 && minute < 10){
-            System.out.println(stringHour + ":" + stringMinute + stringMinute);
-        } else if(hour < 10 && minute > 10){
-            System.out.println(stringHour + stringHour + ":" + stringMinute);
-        } else {
-            System.out.println(stringHour + ":" + stringMinute);
-        }
+        System.out.println(String.format("%02d", hour) + ":" + String.format("%02d", minute));
     }
 
 
@@ -102,7 +89,18 @@ public class Clock {
 
     // addOneMinute()
     public void addOneMinute(){
-        this.minute += 1;
+        if(this.minute == 59) {
+            if(this.hour==23){
+                this.hour=0;
+            }
+            else {
+                this.hour += 1;
+            }
+            this.minute = 0;
+        }
+        else {
+            this.minute += 1;
+        }
         if(this.hour == alarmHour && this.minute == alarmMinute){
             runAlarm();
         }
@@ -119,7 +117,6 @@ public class Clock {
 
     public void runAlarm(){
         System.out.println("beep-beep-beep-beep !!");
-
     }
 
 

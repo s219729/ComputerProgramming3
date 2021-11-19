@@ -33,6 +33,7 @@
 // Turn on the alarm when the alarm time is the same as the clock time(compare times in the addOneMinute() method).
 
 package pl.pankalla.weronika;
+
 public class Main {
     public static void main(String[] args) {
         Clock testClock = new Clock(12, 47);
@@ -41,12 +42,16 @@ public class Main {
         testClock.displayTime();
         testClock.setClock(9, 3);
         testClock.displayTime();
+        testClock.setClock(23, 58);
+        testClock.displayTime();
         testClock.addOneMinute();
+        testClock.displayTime();
+        testClock.addOneMinute();
+        testClock.displayTime();
 
-
-
-
-
+        testClock.setAlarm(0,1);
+        testClock.addOneMinute();
+        testClock.displayTime();
 
     }
 }
