@@ -85,8 +85,6 @@ public class Clock {
     }
 
 
-
-
     // addOneMinute()
     public void addOneMinute(){
         if(this.minute == 59) {
