@@ -11,8 +11,53 @@
 
 package pl.pankalla.weronika;
 
-public class InternetDevice {
+import java.util.Arrays;
 
+public class InternetDevice {
+    String deviceName;
+    boolean connected;
+    static int connectedDevices = 0;
+
+    //Declaring an static array, that will have 3 elements
+    static String[] array = new String[3];
+
+    //Creating constructor
+    InternetDevice(String name){
+        this.deviceName = name;
+        }
+
+    public void connect(){
+        if(this.connected==false){
+            this.connected = true;
+            connectedDevices += 1;
+            array[connectedDevices-1] = this.deviceName;
+        }
+    }
+
+    public void disconnect(){
+        if(this.connected==true){
+            this.connected = false;
+            connectedDevices -= 1;
+        }
+    }
+
+    public boolean isConnected(){
+        if(this.connected) {
+            System.out.println(this.deviceName + " is connected to the Internet");
+            return true;
+        } else {
+            System.out.println(this.deviceName + " is not connected to the Internet");
+            return false;
+    }}
+
+    public void displayStatus(){
+        System.out.println("These devices are connected: " + Arrays.toString(array));
+
+    }
+
+    public static void displayConnections(){
+        System.out.println("There are " + connectedDevices + " connected devices");
+    }
 
 
 }

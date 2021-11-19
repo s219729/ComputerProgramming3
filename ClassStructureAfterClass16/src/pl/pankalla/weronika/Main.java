@@ -11,11 +11,42 @@
 
 package pl.pankalla.weronika;
 
+
 public class Main {
 
     public static void main(String[] args) {
+        InternetDevice computer = new InternetDevice("Computer");
+        computer.connect();
+        computer.isConnected();
+        computer.displayStatus();
+        InternetDevice.displayConnections();
 
-        
+        InternetDevice laptop = new InternetDevice("Laptop");
+        laptop.connect();
+        laptop.isConnected();
+        laptop.displayStatus();
+        InternetDevice.displayConnections();
+
+        InternetDevice tablet = new InternetDevice("Tablet");
+        tablet.connect();
+        tablet.isConnected();
+        tablet.displayStatus();
+        InternetDevice.displayConnections();
+
+        InternetDevice smartphone = new InternetDevice("Smartphone");
+        smartphone.disconnect();
+        smartphone.isConnected();
+        smartphone.displayStatus();
+        InternetDevice.displayConnections();
+
+        InternetDevice tv = new InternetDevice("TV");
+        tv.disconnect();
+        tv.isConnected();
+        tv.displayStatus();
+        InternetDevice.displayConnections();
+
+
+
 
 
 
