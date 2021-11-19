@@ -38,6 +38,8 @@ package pl.pankalla.weronika;
 public class Clock {
     int hour;
     int minute;
+    int alarmHour;
+    int alarmMinute;
 
 
     Clock(){
@@ -66,7 +68,6 @@ public class Clock {
     public void setClock(int hour, int minute){
         this.hour = hour;
         this.minute = minute;
-
     }
 
 
@@ -96,13 +97,30 @@ public class Clock {
         }
     }
 
-    // addOneMinute()
 
+
+
+    // addOneMinute()
     public void addOneMinute(){
         this.minute += 1;
+        if(this.hour == alarmHour && this.minute == alarmMinute){
+            runAlarm();
+        }
     }
 
 
+    // Add methods: setAlarm(hour, minute) and runAlarm(), which displays the "beep-beep-beep-beep !!" alarm sound.
+    //// Turn on the alarm when the alarm time is the same as the clock time(compare times in the addOneMinute() method).
+
+    public void setAlarm(int hour, int minute){
+        alarmHour = hour;
+        alarmMinute = minute;
+    }
+
+    public void runAlarm(){
+        System.out.println("beep-beep-beep-beep !!");
+
+    }
 
 
 }

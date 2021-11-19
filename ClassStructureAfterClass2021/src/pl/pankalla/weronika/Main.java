@@ -32,15 +32,17 @@
 // Add methods: setAlarm(hour, minute) and runAlarm(), which displays the "beep-beep-beep-beep !!" alarm sound.
 // Turn on the alarm when the alarm time is the same as the clock time(compare times in the addOneMinute() method).
 
-
-
 package pl.pankalla.weronika;
-
 public class Main {
-
     public static void main(String[] args) {
         Clock testClock = new Clock(12, 47);
-        Clock secondClock = new Clock();
+        testClock.displayTime();
+        testClock.setClock(18,14);
+        testClock.displayTime();
+        testClock.setClock(9, 3);
+        testClock.displayTime();
+        testClock.addOneMinute();
+
 
 
 
