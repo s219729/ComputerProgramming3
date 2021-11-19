@@ -30,12 +30,12 @@ public class Main {
 
     public static void main(String[] args) {
         Room[] rooms = new Room[6];
-        for(int i =0; i<3; i++) {
-            rooms[i] = new Room(i+1, 2);
+        for (int i = 0; i < 3; i++) {
+            rooms[i] = new Room(i + 1, 2);
         }
 
-        for(int i=3; i<5; i++) {
-            rooms[i] = new Room(i+1, 3);
+        for (int i = 3; i < 5; i++) {
+            rooms[i] = new Room(i + 1, 3);
         }
 
         rooms[5] = new Room(6, 1);
@@ -45,10 +45,7 @@ public class Main {
         rooms[5].checkin("Gabriela");
         rooms[4].checkout();
         // display status of single room
-        System.out.println(rooms[0]);
-
+        System.out.println(rooms[1]);
 
     }
-
-
 }

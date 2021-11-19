@@ -49,4 +49,12 @@ public class Room {
         this.guestName = null;
         this.occupied = false;
     }
+
+    public String toString() {
+        return "Room " +
+                "room number: " + roomNumber +
+                ", beds: " + beds +
+                ", occupied: " + occupied +
+                ", guest name: " + (guestName == null ? "no guest" : guestName);
+    }
 }
