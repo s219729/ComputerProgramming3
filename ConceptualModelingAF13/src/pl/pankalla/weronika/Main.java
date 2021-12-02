@@ -10,6 +10,8 @@ package pl.pankalla.weronika;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        PublishingHouse newPublish = new PublishingHouse();
+        newPublish.setBooksReleased(10);
+        newPublish.displayGenres();
     }
 }

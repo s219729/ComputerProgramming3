@@ -14,6 +14,31 @@ package pl.pankalla.weronika;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        Player firstPlayer = new Player("Weronika");
+
+        //First judge score:
+        firstPlayer.scores[0] = 2;
+
+        //Second judge score:
+        firstPlayer.scores[1] = 2;
+
+        //Third judge score:
+        firstPlayer.scores[2] = 5;
+
+        //Forth judge score:
+        firstPlayer.scores[3] = 4;
+
+        //Fifth judge score:
+        firstPlayer.scores[4] = 1;
+
+        
+        firstPlayer.findTheHighest();
+
+        firstPlayer.findTheLowest();
+
+        firstPlayer.createFinalScore();
+
+
+
     }
 }

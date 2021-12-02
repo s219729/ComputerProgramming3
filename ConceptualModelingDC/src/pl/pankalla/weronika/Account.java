@@ -23,11 +23,11 @@ public class Account {
 
 
     Account(String ownerName, String accountNumber, int year, double balance, String password){
-        this.ownerName = ownerName;
-        this.accountNumber = accountNumber;
-        this.year = year;
-        this.balance = balance;
-        this.password = password;
+        this.setOwnerName(ownerName);
+        this.setAccountNumber(accountNumber);
+        this.setYear(year);
+        this.setBalance(balance);
+        this.setPassword(password);
     }
     //+ setOwnerName(string)
     //+ getOwnerName()
@@ -88,7 +88,7 @@ public class Account {
      }
 
      public void makeDeposit(double deposit){
-         balance = this.balance + deposit;
+         this.balance += deposit;
          System.out.println("You have added a deposit of: " + deposit + " PLN");
          System.out.println("Your balance is now: " + this.balance);
      }
@@ -99,7 +99,7 @@ public class Account {
         } else if (withdraw > 500) {
             System.out.println("You can withdraw no more than PLN 500 from your account at one time!");
         } else {
-            this.balance = this.balance - withdraw;
+            this.balance -= withdraw;
             System.out.println("You have made a withdraw of: " + withdraw + " PLN");
             System.out.println("Your balance is now: " + this.balance);
         }
