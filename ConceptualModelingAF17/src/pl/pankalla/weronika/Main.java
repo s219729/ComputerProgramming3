@@ -8,9 +8,26 @@
 
 package pl.pankalla.weronika;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
+        Seller firstSeller = new Seller("Ansell");
+        Customer firstCustomer = new Customer("Weronika", 24);
+        Product firstProduct = new Product();
+
+        firstSeller.display();
+        firstSeller.displaySellingProduct();
+        firstSeller.displayFavCustomer();
+
+        firstCustomer.display();
+
+        firstProduct.display();
+
+
     }
+
 }
+

@@ -15,12 +15,28 @@
 // 16.	Add to the list of products the ability to enter product names from the keyboard.
 
 
-
 package pl.pankalla.weronika;
 
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        ShoppingList myShoppingList = new ShoppingList();
+        myShoppingList.displayProducts();
+        myShoppingList.displayNumberOfProducts();
+        myShoppingList.addProduct("Mango");
+        myShoppingList.addProduct("Banana");
+        myShoppingList.addProduct("Chocolate");
+
+        myShoppingList.displayProducts();
+        myShoppingList.displayNumberOfProducts();
+        myShoppingList.addProduct("Milk");
+        myShoppingList.displayProducts();
+        myShoppingList.displayNumberOfProducts();
+
+        myShoppingList.productFromKeyboardInput();
+        myShoppingList.displayProducts();
+        myShoppingList.displayNumberOfProducts();
     }
+
+
 }
